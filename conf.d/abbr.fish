@@ -1,0 +1,5 @@
+abbr --add ga "git add"
+abbr --add gc "git commit"
+abbr --add gl "git log"
+abbr --add gs "git status"
+abbr --add v "vim"
