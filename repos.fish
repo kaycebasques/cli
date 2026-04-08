@@ -17,10 +17,11 @@ end
 set repos "technicalwriting.dev" "kaycebasques.net" "books" "sphinx" "fish-shell"
 for repo in $repos:
     if not test -d $HOME/$repo
-    cd $HOME
-    git clone git@github.com:kaycebasques/$repo.git
-    cd $repo
-    git config --local user.email "kaycebasques@gmail.com"
-    git config --local commit.gpgsign true
-    cd $HOME
+        cd $HOME
+        git clone git@github.com:kaycebasques/$repo.git
+        cd $repo
+        git config --local user.email "kaycebasques@gmail.com"
+        git config --local commit.gpgsign true
+        cd $HOME
+    end
 end
