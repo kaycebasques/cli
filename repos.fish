@@ -14,7 +14,7 @@ if not test -d $HOME/pigweed
     cd $HOME
 end
 
-set repos = "technicalwriting.dev" "kaycebasques.net" "books" "sphinx" "fish-shell"
+set repos "technicalwriting.dev" "kaycebasques.net" "books" "sphinx" "fish-shell"
 for repo in $repos:
     if not test -d $HOME/$repo
     cd $HOME
