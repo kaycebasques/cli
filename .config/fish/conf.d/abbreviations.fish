@@ -1,6 +1,7 @@
 abbr --add docs "bazelisk build //docs"
 abbr --add ga "git add"
 abbr --add gcane "git commit --amend --no-edit"
+abbr --add gcm "git commit -m"
 abbr --add gd "git diff"
 abbr --add gfo "git fetch origin"
 abbr --add gl "git log"
