@@ -18,15 +18,5 @@ git config --global user.email "kaycebasques@gmail.com"
 git config --global commit.gpgsign true
 
 if not test -d $HOME/pigweed
-    cd $HOME
-    git clone https://pigweed.googlesource.com/pigweed/pigweed
-    cd pigweed
-    set -l f (git rev-parse --git-dir)/hooks/commit-msg
-    mkdir -p (dirname $f)
-    curl -Lo $f https://gerrit-review.googlesource.com/tools/hooks/commit-msg
-    chmod +x $f
-    echo "TODO: go/pigweed-onboarding#git-config"
-    git config --local user.email "kayce@google.com"
-    git config --local commit.gpgsign false
-    cd -
+    echo "Pigweed repo not found. Run `fish ~/cli/repos.fish` to set up."
 end	
