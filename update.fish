@@ -4,7 +4,8 @@
 set my_conf (status dirname)
 set fish_conf "$HOME/.config/fish"
 
-# Update fish to use my configs
+# Copy configs from my repo into fish config dir
+cp $my_conf/.bashrc $HOME/
 set dirs "conf.d" "functions"
 for dir in $dirs
     set source "$my_conf/$dir"
