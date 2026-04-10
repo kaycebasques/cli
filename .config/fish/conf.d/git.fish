@@ -12,6 +12,17 @@ if not test -n "$(gpg --list-secret-keys --keyid-format=long 2>/dev/null)"
     echo "GPG key not found. Run `fish ~/cli/gpg.fish` to set up."
 end
 
+abbr --add ga "git add"
+abbr --add gb "git branch"
+abbr --add gcane "git commit --amend --no-edit"
+abbr --add gcm "git commit -m"
+abbr --add gd "git diff"
+abbr --add gfo "git fetch origin"
+abbr --add gl "git log"
+abbr --add grom "git rebase origin/main"
+abbr --add gp "git push"
+abbr --add gs "git status"
+
 git config --global core.editor "vim"
 git config --global user.name "Kayce Basques"
 git config --global user.email "kaycebasques@gmail.com"
