@@ -3,10 +3,11 @@ for default_dir in $default_dirs
     set default_dir $HOME/$default_dir
     if not test -d $default_dir
         continue
-    end	
-    rm -rf $default_dir
+    end
+    rm -rf $default_dir/*
+    rmdir $default_dir
 end
 
 if not test -d $HOME/dl
     mkdir $HOME/dl
-end	
+end
