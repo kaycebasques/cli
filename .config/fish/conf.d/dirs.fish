@@ -4,7 +4,7 @@ for default_dir in $default_dirs
     if not test -d $default_dir
         continue
     end	
-    rmdir $default_dir
+    rm -rf $default_dir
 end
 
 if not test -d $HOME/dl
