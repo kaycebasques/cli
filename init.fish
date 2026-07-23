@@ -3,15 +3,11 @@
 set dir (status dirname)
 
 cp $dir/.bashrc $HOME/.bashrc
-
 cp $dir/.vimrc $HOME/.vimrc
 
-if not test -d $dir/.config/fish/conf.d
-    mkdir -p $dir/.config/fish/conf.d
-end
+test -d $HOME/.config; or mkdir -p $HOME/.config
+test -d $HOME/.config/fish; or mkdir -p $HOME/.config/fish
+test -d $HOME/.config/fish/conf.d; or mkdir -p $HOME/.config/fish/conf.d
+test -d $HOME/.config/fish/functions; or mkdir -p $HOME/.config/fish/functions
 cp $dir/.config/fish/conf.d/* $HOME/.config/fish/conf.d/
-
-if not test -d $dir/.config/fish/functions
-    mkdir -p $dir/.config/fish/functions
-end
 cp $dir/.config/fish/functions/* $HOME/.config/fish/functions/
