@@ -1,12 +1,17 @@
 #!/usr/bin/env fish
 
 set dir (status dirname)
-set files .bashrc .vimrc .config/fish
 
-for file in $files
-    set target $HOME/$file
-    if test -e $target; or test -L $target
-        rm -rf $target
-    end
-    ln -s $dir/$file $target
+cp $dir/.bashrc $HOME/.bashrc
+
+cp $dir/.vimrc $HOME/.vimrc
+
+if not test -d $dir/.config/fish/conf.d
+    mkdir -p $dir/.config/fish/conf.d
 end
+cp $dir/.config/fish/conf.d/* $HOME/.config/fish/conf.d/
+
+if not test -d $dir/.config/fish/functions
+    mkdir -p $dir/.config/fish/functions
+end
+cp $dir/.config/fish/functions/* $HOME/.config/fish/functions/
