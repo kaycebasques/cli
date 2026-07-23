@@ -2,4 +2,4 @@
 
 abbr --add b "bash"
 
-cp ../../.bashrc ~/.bashrc
+cp ~/cli/.bashrc ~/.bashrc

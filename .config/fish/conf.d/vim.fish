@@ -6,4 +6,4 @@ end
 
 abbr --add v "vim"
 
-cp ../../.vimrc ~/.vimrc
+cp ~/cli/.vimrc ~/.vimrc
