@@ -1,5 +1,0 @@
-abbr --add docs "bazelisk build //docs"
-abbr --add n "nvim"
-abbr --add serve "bazelisk run //docs:serve"
-abbr --add v "vim"
-abbr --add wip "git push origin HEAD:refs/for/main%wip"
