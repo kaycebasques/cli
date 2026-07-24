@@ -2,8 +2,8 @@
 
 set cli $HOME/cli
 
-echo "Press any key in next 3 seconds to update cli… "
-set -l key (bash -c 'read -t 3 -n 1 -s key; code=$?; echo "$key"; exit $code')
+echo "Press any key in next second to update cli… "
+set -l key (bash -c 'read -t 1 -n 1 -s key; code=$?; echo "$key"; exit $code')
 set -l exit_code $status
 if test $exit_code -eq 0
   echo "Updating…"
