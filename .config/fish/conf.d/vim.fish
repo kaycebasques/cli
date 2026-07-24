@@ -5,5 +5,3 @@ if not command -s vim > /dev/null
 end
 
 abbr --add v "vim"
-
-cp ~/cli/.vimrc ~/.vimrc

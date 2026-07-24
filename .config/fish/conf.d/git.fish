@@ -1,11 +1,11 @@
 #!/usr/bin/fish
 
 if not command -s git > /dev/null
-    sudo apt install git
+  sudo apt install git
 end
 
 if not test -e $HOME/.ssh/id_ed25519.pub
-    echo "SSH key not found. Run `fish ~/cli/ssh.fish` to set up."
+  echo "SSH key not found. Run `fish ~/cli/ssh.fish` to set up."
 end
 
 abbr --add ga. "git add ."
@@ -25,5 +25,5 @@ git config --global user.name "Kayce Basques"
 git config --global user.email "kaycebasques@gmail.com"
 
 if not test -d $HOME/wt
-    mkdir $HOME/wt
+  mkdir $HOME/wt
 end

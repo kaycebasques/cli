@@ -10,8 +10,6 @@ if not test -d $bin
     mkdir -p $bin
 end
 
-# TODO check that `uname` exists?
-
 if not test -f $bin/bazelisk
   set target (string lower (uname -s))-(string lower (uname -m))
   switch $target
