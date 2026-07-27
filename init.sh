@@ -1,4 +1,2 @@
-#!/usr/bin/env bash
-
-sudo apt install fish
+sudo apt install curl fish git openssh-client vim
 fish init.fish

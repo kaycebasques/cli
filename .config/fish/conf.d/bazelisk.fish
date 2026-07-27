@@ -1,9 +1,5 @@
 #!/usr/bin/env fish
 
-if not command -s curl > /dev/null
-    sudo apt install curl
-end
-
 set bin $HOME/.local/bin
 
 if not test -d $bin

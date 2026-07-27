@@ -1,27 +1,9 @@
-#!/usr/bin/fish
-
-if not test -d $HOME/pigweed
-    cd $HOME
-    git clone https://pigweed.googlesource.com/pigweed/pigweed
-    cd pigweed
-    set -l f (git rev-parse --git-dir)/hooks/commit-msg
-    mkdir -p (dirname $f)
-    curl -Lo $f https://gerrit-review.googlesource.com/tools/hooks/commit-msg
-    chmod +x $f
-    echo "TODO: go/pigweed-onboarding#git-config"
-    git config --local user.email "kayce@google.com"
-    cd $HOME
-end
+#!/usr/bin/env fish
 
 set repos "technicalwriting.dev" "kaycebasques.net"
 for repo in $repos
     if not test -d $HOME/$repo
-        cd $HOME
-        git clone git@github.com:kaycebasques/$repo.git
-        cd $repo
-        git config --local user.email "kaycebasques@gmail.com"
-        cd $HOME
+        git clone git@github.com:kaycebasques/$repo.git $HOME/$repo
+        git -C $HOME/$repo config --local user.email "kaycebasques@gmail.com"
     end
 end
-
-
