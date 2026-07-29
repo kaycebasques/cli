@@ -1,5 +1,9 @@
 #!/usr/bin/fish
 
+if not command -s git > /dev/null
+    sudo apt install git
+end
+
 if not test -e $HOME/.ssh/id_ed25519.pub
   echo "SSH key not found. Run `fish ~/cli/ssh.fish` to set up."
 end

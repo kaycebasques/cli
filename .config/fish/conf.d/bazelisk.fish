@@ -2,6 +2,10 @@
 
 set bin $HOME/.local/bin
 
+if not command -s curl > /dev/null
+    sudo apt install curl
+end
+
 if not test -d $bin
     mkdir -p $bin
 end
