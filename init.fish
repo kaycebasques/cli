@@ -15,5 +15,11 @@ end
 
 test -d $HOME/.config/fish/conf.d; or mkdir -p $HOME/.config/fish/conf.d
 test -d $HOME/.config/fish/functions; or mkdir -p $HOME/.config/fish/functions
+
+for file in $HOME/.config/fish/conf.d/*
+  if not string match -q "m_*" (basename $file)
+    rm $file
+  end
+end
 cp $cli/.config/fish/conf.d/* $HOME/.config/fish/conf.d/
 cp $cli/.config/fish/functions/* $HOME/.config/fish/functions/
