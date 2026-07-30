@@ -14,12 +14,17 @@ if not diff -q $cli/.vimrc $HOME/.vimrc >/dev/null
 end
 
 test -d $HOME/.config/fish/conf.d; or mkdir -p $HOME/.config/fish/conf.d
-test -d $HOME/.config/fish/functions; or mkdir -p $HOME/.config/fish/functions
-
 for file in $HOME/.config/fish/conf.d/*
-  if not string match -q "m_*" (basename $file)
+  if not string match -q "_*" (basename $file)
     rm $file
   end
 end
 cp $cli/.config/fish/conf.d/* $HOME/.config/fish/conf.d/
+
+test -d $HOME/.config/fish/functions; or mkdir -p $HOME/.config/fish/functions
+for file in $HOME/.config/fish/functions/*
+  if not string match -q "_*" (basename $file)
+    rm $file
+  end
+end
 cp $cli/.config/fish/functions/* $HOME/.config/fish/functions/
