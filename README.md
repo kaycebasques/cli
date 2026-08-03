@@ -1,4 +1,4 @@
-# cli
+# k
 
 ## Setup
 
@@ -8,10 +8,10 @@
    or anything like that. You'll never be able to run a `bash` terminal
    with that setup.
 
-2. Run `fish update.fish` to propagate the customizations.
+2. Run `fish init.fish` to propagate the customizations.
 
 ## Updates
 
 1. Make your changes in this repo.
 
-2. Run `fish update.fish` to propagate the new customizations.
+2. Run `fish init.fish` to propagate the new customizations.

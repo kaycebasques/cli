@@ -5,7 +5,7 @@ if not command -s git > /dev/null
 end
 
 if not test -e $HOME/.ssh/id_ed25519.pub
-  echo "SSH key not found. Run `fish ~/cli/ssh.fish` to set up."
+  echo "SSH key not found. Run `fish ~/k/ssh.fish` to set up."
 end
 
 abbr --add ga. "git add ."

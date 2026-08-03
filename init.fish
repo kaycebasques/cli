@@ -1,16 +1,16 @@
 #!/usr/bin/env fish
 
-set cli $HOME/cli
+set repo_dir (path resolve (status dirname))
 
-git -C $cli fetch origin
-git -C $cli rebase origin/main
+git -C $repo_dir fetch origin
+git -C $repo_dir rebase origin/main
 
-if not diff -q $cli/.bashrc $HOME/.bashrc >/dev/null
-  cp $cli/.bashrc $HOME/.bashrc
+if not diff -q $repo_dir/.bashrc $HOME/.bashrc >/dev/null
+  cp $repo_dir/.bashrc $HOME/.bashrc
 end
 
-if not diff -q $cli/.vimrc $HOME/.vimrc >/dev/null
-  cp $cli/.vimrc $HOME/.vimrc
+if not diff -q $repo_dir/.vimrc $HOME/.vimrc >/dev/null
+  cp $repo_dir/.vimrc $HOME/.vimrc
 end
 
 test -d $HOME/.config/fish/conf.d; or mkdir -p $HOME/.config/fish/conf.d
@@ -19,7 +19,7 @@ for file in $HOME/.config/fish/conf.d/*
     rm $file
   end
 end
-cp $cli/.config/fish/conf.d/* $HOME/.config/fish/conf.d/
+cp $repo_dir/.config/fish/conf.d/* $HOME/.config/fish/conf.d/
 
 test -d $HOME/.config/fish/functions; or mkdir -p $HOME/.config/fish/functions
 for file in $HOME/.config/fish/functions/*
@@ -27,4 +27,4 @@ for file in $HOME/.config/fish/functions/*
     rm $file
   end
 end
-cp $cli/.config/fish/functions/* $HOME/.config/fish/functions/
+cp $repo_dir/.config/fish/functions/* $HOME/.config/fish/functions/
