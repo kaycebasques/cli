@@ -1,17 +1,35 @@
 # k
 
-## Setup
+## setup
 
-1. Go to terminal preferences and make it run `fish` on startup there.
+```
+git clone --recurse-submodules git@github.com:kaycebasques/k.git
+cd k
+fish init.fish
+```
 
-   Don't try to be fancy and automatically invoke `fish` via `.bashrc`
-   or anything like that. You'll never be able to run a `bash` terminal
-   with that setup.
+### git submodule stuff
 
-2. Run `fish init.fish` to propagate the customizations.
+init in an existing clone:
 
-## Updates
+```
+git submodule update --init --recursive
+```
 
-1. Make your changes in this repo.
+update all remotes to latest commit:
 
-2. Run `fish init.fish` to propagate the new customizations.
+```
+git submodule update --remote --recursive
+```
+
+pull latest changes:
+
+```
+git submodule update --remote --rebase
+```
+
+update SHAs:
+
+```
+git commit -m 'update submodules'
+```
