@@ -1,0 +1,6 @@
+[submodule "kaycebasques.net"]
+	path = kaycebasques.net
+	url = git@github.com:kaycebasques/kaycebasques.net.git
+[submodule "technicalwriting.dev"]
+	path = technicalwriting.dev
+	url = git@github.com:kaycebasques/technicalwriting.dev
