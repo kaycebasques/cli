@@ -24,6 +24,14 @@ git config --global core.editor "vim"
 git config --global user.name "Kayce Basques"
 git config --global user.email "kaycebasques@gmail.com"
 
+# Automatically update and recurse into submodules for operations like
+# 'git pull', 'git checkout', 'git reset', and 'git diff'.
+git config --global submodule.recurse true
+
+# Abort the push if any referenced submodule commits have not been pushed
+# to their remote repository yet.
+git config --global push.recurseSubmodules check
+
 if not test -d $HOME/wt
   mkdir $HOME/wt
 end
